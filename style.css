@@ -1,0 +1,121 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    height: 100vh;
+    background-color: #f4f4f4;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+    margin: 0;
+}
+
+.clock{
+    width: 300px;
+    height: 300px;
+}
+
+.clock-panel{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    border: 10px solid silver;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+
+    position: relative;
+}
+
+.clock-face{
+    color: #fff;
+}
+
+.clock-face-item{
+    position: absolute;
+    left: 48.5%;
+    /* left: 135px; */
+    top: 17px;
+
+    transform: translate(-48.5%);
+    transform-origin: 50% 125px;
+}
+
+.num-12{transform: rotate(0deg);}
+.num-1{transform: rotate(30deg);}
+.num-2{transform: rotate(60deg);}
+.num-3{transform: rotate(90deg);}
+.num-4{transform: rotate(120deg);}
+.num-5{transform: rotate(150deg);}
+.num-6{transform: rotate(180deg);}
+.num-7{transform: rotate(210deg);}
+.num-8{transform: rotate(240deg);}
+.num-9{transform: rotate(270deg);}
+.num-10{transform: rotate(300deg);}
+.num-11{transform: rotate(330deg);}
+
+
+.clock-face-hand-item{
+    position: absolute;
+}
+
+
+.clock-face-hand-item.hour{
+    width: 4px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 10px;
+
+    left: calc((150px - 2px) + 2px); /* 150-4+2 = 148px */
+    top: calc(150px - 60px); /* 150-60 = 90px */
+
+    /* left: 150px;  */
+    /* top: 90px;  */
+
+    transform-origin: 50% 100%;
+
+    /* transform: rotate(320deg); */
+
+    /*JS Method-2*/
+    --myrotation:320;
+    transform: rotate(calc(var(--myrotation) * 1deg ));
+}
+
+.clock-face-hand-item.minute{
+    width: 4px;
+    height: 120px;
+    background-color: #fff;
+    border-radius: 10px;
+
+    left: calc((150px - 2px) + 2px); /* 150-4+2 = 148px */
+    top: calc((150px - 130px) + 10px); /* 150-60 = 90px */
+
+    transform-origin: 50% 120px;
+
+    /* transform: rotate(50deg); */
+
+    /*JS Method-2*/
+    --myrotation:50;
+    transform: rotate(calc(var(--myrotation) * 1deg ));
+}
+
+.clock-face-hand-item.second{
+    width: 2px;
+    height: 145px;
+    background-color: #fff;
+    border-radius: 10px;
+
+    left: calc((150px - 2px) + 2px); /* 150-4+2 = 148px */
+    top: calc(150px - 145px); /* 150-60 = 90px */
+
+    transform-origin: 80% 143.5px;
+
+    /* transform: rotate(200deg); */
+
+    /*JS Method-2*/
+    --myrotation:200;
+    transform: rotate(calc(var(--myrotation) * 1deg ));
+}
